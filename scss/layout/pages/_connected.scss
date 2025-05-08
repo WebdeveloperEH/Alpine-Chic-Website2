@@ -1,0 +1,104 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/* 7.7 connected css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-connected{
+  &-app{
+    &-item{
+      box-shadow: 0 1px 4px 0 rgba(20, 20, 20, 0.5);
+      background: var(--tp-common-black);
+      padding: 8px 16px 10px 16px;
+      border-radius: 6px;
+      @include transition(all .4s ease);
+      position: relative;
+      z-index: 1;
+      &::before{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: var(--tp-common-black);
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include transition(all .4s ease);
+        border-radius: 6px;
+      }
+      & span{
+        width: 30px;
+      }
+      & p{
+        font-family: var(--tp-ff-onest);
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 167%;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0;
+      }
+    }
+    &-store{
+      flex-wrap: wrap;
+    }
+    &-border{
+      border: 2px solid #a1c8de;
+      padding: 6px;
+      border-radius: 10px;
+      @include transition(all .4s ease);
+      &:hover{
+        & .tp-connected-app-item{
+          &::before{
+            transform: scale(1.12);
+          }
+        }
+        border: 2px solid transparent;
+      }
+    }
+    &-white{
+      &::before{
+        background: var(--tp-common-white);
+      }
+      & p{
+        color: var(--tp-common-black);
+      }
+      & h6{
+        color: var(--tp-common-black);
+      }
+    }
+    &-title{
+      font-family: var(--tp-ff-onest);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--tp-common-white);
+      margin-bottom: 0;
+    }
+  }
+  &-thumb{
+    position: relative;
+    z-index: 1;
+    @media #{$md,$sm,$xs} {
+      text-align: left;
+    }
+    @media #{$sm,$xs} {
+      & img{
+        width: 100%;
+      }
+    }
+  }
+  &-content{
+    &-wrap{
+      position: relative;
+      z-index: 1;
+      @media #{$xs} {
+        margin-left: 0;
+      }
+    }
+  }
+  &-title{
+    &-wrap{
+      @media #{$xl,$lg,$md,$sm,$xs} {
+        margin-right: 0;
+      }
+    }
+  }
+}

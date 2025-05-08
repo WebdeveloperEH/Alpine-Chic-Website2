@@ -1,0 +1,40 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* 7.3 banefit css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-banefit{
+  &-title{
+    font-family: var(--tp-ff-playfair);
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 0.04em;
+    color: var(--tp-common-black4);
+  }
+  &-content{
+    position: relative;
+    padding-left: 30px;
+    @media #{$lg,$md,$sm,$xs} {
+      margin-left: 0;
+    }
+    &::before{
+      content: "";
+      background: rgba(160, 89, 22, 0.16);
+      height: 74px;
+      width: 1px;
+      position: absolute;
+      top: -8px;
+      left: 0;
+    }
+  }
+  &-icon{
+    & span{
+      color: var(--tp-theme-2);
+      margin-right: 20px;
+      & svg{
+        transform: translateY(5px);
+      }
+    }
+  }
+}

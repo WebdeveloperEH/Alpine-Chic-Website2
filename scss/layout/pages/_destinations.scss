@@ -1,0 +1,172 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.11 product css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-destinations{
+  $self : &;
+  &-thumb{
+    position: relative;
+    transform: scale3d(1, 1, 1);
+    transition: transform .65s cubic-bezier(.23,1,.32,1);
+    &::after{
+      position: absolute;
+      content: "";
+      background: linear-gradient(180deg, rgba(9, 3, 3, 0.08) 0%, rgba(9, 3, 3, 0) 51.4%, rgba(9, 3, 3, 0.6) 100%);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 12px;
+      @include transition(all .4s ease)
+    }
+    & img{
+      width: 100%;
+      border-radius: 12px;
+      transform: scale(1.2);
+      transition: transform .65s cubic-bezier(.23,1,.32,1);
+      width: 100%;
+    }
+  }
+  &-wrap{
+    border-radius: 12px;
+    &:hover{
+      #{$self}{
+        &-thumb{
+          &::after{
+            opacity: 1;
+          }
+        }
+        &-time{
+          opacity: 1;
+          visibility: visible;
+        }
+        &-content{
+          transform: translateY(-22px);
+        }
+      }
+    }
+  }
+  &-content{
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    transform: translateY(14px);
+    @include transition(all .4s ease);
+  }
+  &-time{
+    font-family: var(--font-family);
+    letter-spacing: -0.02em;
+    color: var(--tp-common-white);
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all .4s ease);
+    & .dvdr{
+      margin: 0 8px;
+    }
+  }
+  &-title{
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    margin-bottom: 3px;
+    color: var(--tp-common-white);
+  }
+  &-rating{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    backdrop-filter: blur(8px);
+    background: rgba(20, 20, 20, 0.08);
+    border: 1px solid rgba(20, 20, 20, 0.08);
+    border-radius: 100px;
+    padding: 0px 7px;
+    & span{
+      & i{
+        margin-right: 4px;
+      }
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+      color: var(--tp-common-white);
+    }
+  }
+  &-box{
+    transform: scale3d(1, 1, 1);
+    transition: transform .65s cubic-bezier(.23,1,.32,1);
+    border-radius: 12px;
+    &:hover{
+      transform: scale3d(1.09,1.09,1);
+      & .tp-destinations-thumb img {
+        transform: scale(1);
+      }
+    }
+  }
+  &-details{
+    &-thumb{
+      & img{
+        border-radius: 12px;
+      }
+    }
+  }
+  &-main{
+    background: #d9d9d9;
+    border-radius: 12px;
+    @include tp-transition();
+    &:hover{
+      #{$self}{
+        &-thumb{
+          transform: scale3d(1.09,1.09,1);
+        }
+      }
+    }
+    &.shadows{
+      &:hover{
+        box-shadow: 0 20px 34px -14px rgba(51, 2, 27, 0.7);
+      }
+      &-1:hover{
+        box-shadow: 0 20px 34px -14px rgba(109, 62, 6, 0.7);
+      }
+      &-2:hover{
+        box-shadow: 0 20px 34px -14px rgba(1, 47, 40, 0.7);
+      }
+      &-3:hover{
+        box-shadow: 0 20px 34px -14px rgba(62, 34, 3, 0.7);
+      }
+    }
+  }
+  &-arrow{
+    &-box{
+      @media #{$md,$sm,$xs} {
+        padding-top: 20px;
+      }
+      @media #{$xs} {
+        justify-content: flex-start!important;
+      }
+      & .tp-destinations-next{
+        margin-left: 15px;
+      }
+      & button{
+        color: #5A5859;
+        font-size: 19px;
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        @include transition(all .4s ease);
+        border-radius: 50%;
+        &:hover{
+          background: rgba(246, 246, 246, 0.97);
+        }
+      }
+    }
+  }
+  &-slide{
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

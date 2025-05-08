@@ -1,0 +1,190 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Sidebar CSS START
+/*----------------------------------------*/
+
+.#{$theme-prifix}-sidebar{
+    &-wrapper{
+        margin-left: 60px;
+        @media #{$lg,$md,$sm,$xs} {
+            margin-left: 0;
+        }
+    }
+    &-search{
+        &-input{
+            position: relative;
+            & input{
+                font-weight: 400;
+                font-size: 16px;
+                color: #75726e;
+                box-shadow: 0 1px 1px 0 rgba(32, 33, 36, 0.12);
+                background: var(--tp-common-white);
+                height: 60px;
+                padding: 22px 50px 23px 27px;
+                border: 1px solid transparent;
+                &:focus{
+                    border: 1px solid var(--tp-theme-2);
+                    background: transparent;
+                }
+                &::placeholder{
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: var(--tp-common-falured);
+                }
+            }
+        }
+        &-btn{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 23px;
+        }
+    }
+    &-widget{
+        &-title{
+            font-weight: 700;
+            font-size: 24px;
+            font-family: var(--tp-ff-playfair );
+            color: var(--tp-common-black4);
+        }
+    }
+    &-border{
+        border-bottom: 1px solid#dfdbd7 ;
+        margin-bottom: 36px;
+        padding-bottom: 30px;
+    }
+    &-post{
+        &-meta{
+            & span{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 1.43;
+                color: #75726e;
+                display: inline-block;
+                &.dvdr{
+                    height: 4px;
+                    width: 4px;
+                    background: #75726e;
+                    border-radius: 50%;
+                    margin-left: 10px;
+                    margin-right: 7px;
+                    transform: translateY(-3px);
+                }
+            }
+        }
+        &-title{
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.44;
+            font-family: var(--tp-ff-playfair);
+            color: var(--tp-common-black4);
+            margin-bottom: 10px;
+            & a{
+                &:hover{
+                    color: var(--tp-common-falured);
+                }
+            }
+        }
+        &-cetagory{
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 1.67;
+            text-transform: uppercase;
+            color: var(--tp-common-black4);
+            border: 1px solid #2d1a0e;
+            padding: 2px 12px 2px 12px;
+            backdrop-filter: blur(6px);
+            display: inline-block;
+            margin-bottom: 12px;
+            &.cetagory-2{
+                border: 1px solid var(--tp-common-falured);
+                color: var(--tp-common-falured);
+            }
+        }
+    }
+    &-categories{
+        &-title{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--tp-common-white);
+            padding: 20px 30px;
+            margin-bottom: 0;
+        }
+        &-item{
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+            &:hover{
+                & .tp-sidebar-categories-img{
+                    transform: scale(1.08);
+                }
+            }
+        }
+        &-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .6s ease;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.tagcloud{
+    & a{
+        box-shadow: 0 1px 2px 0 rgba(32, 33, 36, 0.2);
+        background: var(--tp-common-white);
+        padding: 6px 18px;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.67;
+        text-transform: uppercase;
+        color: var(--tp-grey-5);
+        transition: all .4s ease;
+        margin-bottom: 8px;
+        margin-right: 2px;
+        &:hover{
+            color: var(--tp-common-white);
+            background: var(--tp-common-black4);
+        }
+    }
+    &-details{
+        @media #{$sm,$xs} {
+            margin-bottom: 30px; 
+        }
+        & a{
+            font-family: var(--tp-ff-onest);
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--tp-grey-1);
+            box-shadow: 0 1px 1px 0 rgba(48, 54, 81, 0.06);
+            background: #f5f5f5;
+            border-radius: 6px;
+            text-transform: capitalize;
+            &:hover{
+                background: var(--tp-theme-primary);
+            }
+        }
+        &-2{
+            & a{
+                box-shadow: 0 1px 1px 0 rgba(32, 33, 36, 0.12);
+                background: var(--tp-common-white);
+                border-radius: 0;
+                color: #635c57;
+                &:hover{
+                    box-shadow: 0 1px 1px 0 rgba(32, 33, 36, 0.12);
+                    background: var(--tp-common-falured);
+                }
+            }
+        }
+    }
+}
+
+.tp-sticky {
+    position: sticky;
+    top: 130px;
+}

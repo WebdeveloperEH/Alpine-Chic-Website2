@@ -1,0 +1,182 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* 6.3 offcanvas css
+/*----------------------------------------*/
+
+
+
+
+.body-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.45s ease-in-out;
+    background: rgba(24, 24, 24, 0.4);
+
+    &.opened {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// offcanvas 
+.tp-offcanvas {
+    &-logo{
+        width: 150px;
+        & img{
+            width: 100%;
+        }
+    }
+  &-area {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    z-index: 99;
+    z-index: 99999;
+    padding: 50px 50px;
+    overflow-y: scroll;
+    @extend %transition;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    background: #FFF;
+    overscroll-behavior-y: contain;
+    @include tp-transform(translateX(calc(100% + 80px)));
+    @media only screen and (max-width: 400px) {
+        padding: 35px 30px;
+    }
+    @media #{$xs} {
+        width: 100%;
+    }
+
+    @media #{$sm} {
+        width: 450px;
+    }
+
+    &.opened {
+        @include tp-transform(translateX(0));
+    }
+  }
+    &-top {
+        margin-bottom: 60px;
+    }
+    &-close {
+        &-btn {
+            color: rgba($color: #000, $alpha: 1);
+
+            &:hover {
+                opacity: 1;
+                @include tp-transform(rotate(90deg));
+            }
+        }
+    }
+    &-content {
+        margin-bottom: 45px;
+
+        & p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #414144;
+        }
+    }
+    &-title {
+        font-size: 40px;
+        line-height: 1;
+        letter-spacing: -0.8px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: var(--tp-common-black);
+
+        &.sm {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: var(--tp-common-black);
+        }
+    }
+    &-gallery {
+        margin-bottom: 65px;
+    }
+    &-contact {
+        margin-bottom: 55px;
+
+        & ul {
+            & li {
+                list-style: none;
+
+                &:not(:last-child) {
+                    margin-bottom: 2px;
+                }
+                & a {
+                    display: inline-block;
+                    color: #414144;
+                    font-size: 18px;
+                    position: relative;
+                    &::after{
+                        position: absolute;
+                        bottom: 2px;
+                        right: 0;
+                        width: 0;
+                        height: 1px;
+                        content: '';
+                        transition: .4s;
+                        background-color: #1e1e1e;
+                    }
+                    &:hover{
+                        color: var(--tp-common-black);
+                        &::after{
+                            width: 100%;
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-social {
+        & ul {
+            @include tp-flexbox();
+            align-items: center;
+
+            & li {
+                list-style: none;
+
+                &:not(:last-child) {
+                    margin-right: 8px;
+                }
+
+                & a {
+                    display: inline-block;
+                    text-align: center;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 38px;
+                    border-radius: 40px;
+                    @extend %transition;
+                    color: var(--tp-common-black);
+                    border: 1px solid rgba(2, 11, 24, 0.10);
+                        background-color: var(--tp-common-white);
+                    &:hover {
+                        background-color: var(--tp-common-black);
+                        border-color: var(--tp-common-black);
+                        color: var(--tp-common-white);
+                    }
+
+                    & svg {
+                        @include tp-transform(translateY(-1px));
+                    }
+                }
+            }
+        }
+    }
+}

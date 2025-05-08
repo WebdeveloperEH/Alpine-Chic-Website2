@@ -1,0 +1,95 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.4 banner css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-banner{
+  $self : &;
+  &-thumb{
+    padding: 53px 40px 230px 60px;
+    border-radius: 10px;
+    @media #{$lg,$md} {
+      padding: 53px 40px 165px 60px;
+    }
+    @media #{$sm} {
+      padding: 53px 40px 120px 60px;
+    }
+    @media #{$xs} {
+      padding: 53px 40px 120px 30px;
+    }
+    &-2{
+      padding: 52px 40px 53px 344px;
+      border-radius: 10px;
+      @media #{$lg,$sm} {
+        padding: 52px 40px 53px 200px;
+      }
+      @media #{$xs} {
+        padding: 52px 40px 53px 30px;
+      }
+    }
+    &-3{
+      padding: 52px 40px 53px 60px;
+      border-radius: 10px;
+      @media #{$xs} {
+        padding: 52px 40px 53px 30px;
+      }
+    }
+    &-inner{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      transition: all .7s ease;
+      height: 100%;
+      & img{
+        height: 100%;
+      }
+    }
+  }
+  &-box{
+    overflow: hidden;
+    &:hover{
+      #{$self}{
+        &-thumb{
+          &-inner{
+            transform: scale(1.07);
+          }
+        }
+      }
+    }
+  }
+  &-title{
+    font-family: var(--tp-ff-onest);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    @media #{$sm,$xs} {
+      font-size: 30px;
+    }
+    &-pre{
+      font-family: var(--tp-ff-amita);
+      color: #697203;
+      margin-bottom: 0;
+      &-2{
+        color: #aa0c87;
+      }
+    }
+  }
+  &-offer{
+    font-family: var(--tp-ff-amita);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--tp-common-black);
+    & span{
+      position: relative;
+      color: var(--tp-theme-primary);
+      & svg{
+        position: absolute;
+        left: -6px;
+        bottom: 3px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.2 background
+/*----------------------------------------*/
+
+.tp-section-black{
+  background: var(--tp-common-black);
+}
+.tp-bg-gray{
+  background: #f9f9f9;
+}
+.tp-bg-gray-2{
+  background: #f8f8f8;
+}
+.tp-bg-gray-3{
+  background: #f6f6f6;
+}
+.tp-bg-gray-4{
+  background: #f6efe7;
+}
+.tp-pink-bg{
+  background: #44343a;
+}
+.tp-yellow-bg{
+  background: #ffd084;
+}
+.tp-falured-bg{
+  background: #761f0e;
+}
+.tp-falured-bg-2{
+  background: var(--tp-common-black4);
+}
+.tp-home-3-bg{
+  background: #faf5ef;
+}

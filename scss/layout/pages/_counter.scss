@@ -1,0 +1,30 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/* 7.9 counter css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-counter{
+  &-number{
+    font-family: var(--tp-ff-onest);
+    font-weight: 400;
+    font-size: 60px;
+    letter-spacing: -0.02em;
+    color: #141820;
+    margin-bottom: 0;
+  }
+  &-item{
+    padding: 21px 30px 24px 40px;
+    margin-left: -1px;
+    border: 1px solid rgba(160, 89, 22, 0.1);
+    margin-top: -1px;
+  }
+  &-title{
+    font-family: var(--tp-ff-onest);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #525356;
+  }
+}
